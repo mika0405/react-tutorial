@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Tutorial</title>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="first_list"></div>
+        <div id="second_list"></div>
+
+        <script type="text/jsx">
+            class ShoppingList extends React.Component {
+                render() {
+                  return (
+                    <div className="shopping-list">
+                      <h1>Shopping List for {this.props.name}</h1>
+                      <ul>
+                        <li>{this.props.first_item}</li>
+                        <li>{this.props.second_item}</li>
+                        <li>{this.props.third_item}</li>
+                      </ul>
+                    </div>
+                  );
+                }
+              }
+            
+            ReactDOM.render(<ShoppingList name="Mika" first_item="Instagram" second_item="WhatsApp" third_item="Oculus"/>, document.getElementById('first_list'));
+            ReactDOM.render(<ShoppingList name="Eri" first_item="Apple" second_item="Orange" third_item="Banana"/>, document.getElementById('second_list'));
+        </script>
+    </body>
+ </html>
